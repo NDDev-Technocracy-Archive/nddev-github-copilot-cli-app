@@ -88,7 +88,9 @@ python3 cli-tools/nddev_github_copilot_cli.py --help
 git diff --check
 ```
 
-The public validator parses the public contracts and non-live manager surfaces,
-checks release/archive closure, and runs public adversarial smokes without
-network or live Copilot state. The exact validator inventory is owned by
+Run `just check` or `just verify` for source maintenance while product work is
+paused. The existing public validator reads version, setup/profile and asset
+metadata, checks required source/release paths and parses the manager's AST.
+These checks are read-only and offline; they do not load or execute the manager
+or operate Copilot CLI. The exact validator inventory is owned by
 `cli-tools/validate_public_contracts.py`.
